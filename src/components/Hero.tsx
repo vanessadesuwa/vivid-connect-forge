@@ -7,48 +7,58 @@ export const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-hero bg-[length:200%_200%] animate-gradient-shift">
-      <div className="absolute inset-0 bg-background/10 backdrop-blur-3xl" />
-      
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       <div className="container mx-auto px-4 py-20 relative z-10 animate-fade-in">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-white drop-shadow-lg">
-              Creative Developer &
-              <span className="block bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">
-                Social Media Expert
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto">
-              Crafting beautiful digital experiences and compelling social media strategies
-            </p>
-          </div>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Profile Picture Space */}
+            <div className="order-1 md:order-2 flex justify-center">
+              <div className="w-72 h-72 md:w-96 md:h-96 rounded-full bg-card border-4 border-primary shadow-card flex items-center justify-center">
+                <p className="text-muted-foreground text-center px-8">Your photo here</p>
+              </div>
+            </div>
+            
+            {/* Text Content */}
+            <div className="order-2 md:order-1 space-y-8 text-center md:text-left">
+              <div className="space-y-4">
+                <h1 className="text-5xl md:text-7xl font-bold text-foreground">
+                  Creative Developer &
+                  <span className="block text-primary">
+                    Social Media Expert
+                  </span>
+                </h1>
+                <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl">
+                  Crafting beautiful digital experiences and compelling social media strategies
+                </p>
+              </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button 
-              size="lg"
-              onClick={scrollToPortfolio}
-              className="bg-white text-primary hover:bg-white/90 font-semibold px-8 shadow-glow"
-            >
-              View My Work
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="border-2 border-white text-white hover:bg-white hover:text-primary font-semibold px-8"
-            >
-              Get In Touch
-            </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-8">
+                <Button 
+                  size="lg"
+                  onClick={scrollToPortfolio}
+                  className="font-semibold px-8"
+                >
+                  View My Work
+                </Button>
+                <Button 
+                  size="lg"
+                  variant="outline"
+                  className="font-semibold px-8"
+                >
+                  Get In Touch
+                </Button>
+              </div>
+            </div>
           </div>
-
-          <button
-            onClick={scrollToPortfolio}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/80 hover:text-white transition-all animate-bounce"
-            aria-label="Scroll down"
-          >
-            <ArrowDown size={32} />
-          </button>
         </div>
+
+        <button
+          onClick={scrollToPortfolio}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-foreground/60 hover:text-foreground transition-all animate-bounce"
+          aria-label="Scroll down"
+        >
+          <ArrowDown size={32} />
+        </button>
       </div>
     </section>
   );
